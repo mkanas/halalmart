@@ -1,12 +1,12 @@
 import React from "react";
-import Home from "./home/Home";
+import CheckOut from "./CheckOut";
 
-function page() {
+const page = () => {
   return (
     <div>
-      <Home />
+      <CheckOut />
     </div>
   );
-}
+};
 
 export default page;
