@@ -24,3 +24,34 @@
     transform: translateY(0);
   }
 }
+
+.profile_actions {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100px;
+  z-index: 10;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: hsl(108, 94%, 45%);
+  line-height: 30px;
+  display: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .profile_actions {
+    width: 80px;
+    right: 100px;
+    margin-right: 20px;
+  }
+}
+.show_profileActions {
+  display: block;
+}

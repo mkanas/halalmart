@@ -1,11 +1,12 @@
 import React from "react";
 import CheckOut from "./CheckOut";
+import ProtectedRoutes from "@/app/custom-hooks/protectedRoutes";
 
 const page = () => {
   return (
-    <div>
+    <ProtectedRoutes>
       <CheckOut />
-    </div>
+    </ProtectedRoutes>
   );
 };
 

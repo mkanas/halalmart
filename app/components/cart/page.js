@@ -8,7 +8,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div>
+    <div className="w-full h-full bg-white ">
       <Cart />
     </div>
   );

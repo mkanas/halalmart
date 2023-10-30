@@ -11,7 +11,7 @@ function Clock() {
 
   let interval;
   const countDown = () => {
-    const destination = new Date("Oct 15, 2023").getTime();
+    const destination = new Date("Nov 15, 2023").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -40,7 +40,7 @@ function Clock() {
   });
 
   return (
-    <main className="flex justify-start  w-full">
+    <main className="md:flex md:justify-start md:ml-[-1px] ml-[8px] flex justify-center w-full">
       <section className="text-white items-center  w-[66px] flex justify-start">
         <div className="text-[20px] text-center leading-4">
           <p>{days}</p>
@@ -67,7 +67,6 @@ function Clock() {
           <p>{seconds}</p>
           <span className="text-xs">Seconds</span>
         </div>
-        <div className="ml-[8px]">:</div>
       </section>
     </main>
   );

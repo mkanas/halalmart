@@ -1,0 +1,22 @@
+.bgShop {
+  width: 100%;
+  height: 200px; /* Sesuaikan tinggi yang Anda inginkan */
+  background-image: url("/assets/images/bg-shop1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: 75% 40%;
+}
+
+.title {
+  color: white; /* atau warna lain yang Anda inginkan */
+  font-size: 2em; /* atau ukuran lain yang Anda inginkan */
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    text-align: center;
+  }
+}

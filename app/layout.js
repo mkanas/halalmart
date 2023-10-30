@@ -2,7 +2,9 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
 import { Inter } from "next/font/google";
-
+import { Providers } from "./redux/provider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,11 +15,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <Providers>
+        <body className={inter.className}>
+          <Navbar />
+          <ToastContainer
+            theme="light"
+            position="top-right"
+            autoClose={3000}
+            closeOnClick
+            pauseOnHover
+          />
+          {children}
+          <Footer />
+        </body>
+      </Providers>
     </html>
   );
 }
