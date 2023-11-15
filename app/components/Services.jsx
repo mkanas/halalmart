@@ -7,7 +7,7 @@ const Services = () => {
       <section className="flex items-center mt-[10px] transition duration-300 ease-in-out hover:scale-110 cursor-pointer md:px-[7px] md:py-[20px] py-[15px] px-[10px] rounded-[4px]  mx-[10px]  md:justify-between bg-[#d48888] md:w-[220px]">
         <div className="md:px-[1px] px-[3px] mr-[3px] ">
           <Image
-            src="/assets/free-delivery.png"
+            src="/assets/images/free-delivery.png"
             alt=""
             width={40}
             height={40}
@@ -20,7 +20,12 @@ const Services = () => {
       </section>
       <section className="flex items-center mt-[10px] transition duration-300 ease-in-out hover:scale-110 cursor-pointer md:px-[7px] md:py-[20px] py-[15px] px-[10px] rounded-[4px]  mx-[10px] md:justify-between bg-[#d188d4] md:w-[220px]">
         <div className="md:px-[1px] px-[3px] mr-[3px] ">
-          <Image src="/assets/easy-return.png" alt="" width={40} height={40} />
+          <Image
+            src="/assets/images/easy-return.png"
+            alt=""
+            width={40}
+            height={40}
+          />
         </div>
         <div>
           <p className="font-semibold">Easy Return</p>
@@ -29,7 +34,12 @@ const Services = () => {
       </section>
       <section className="flex items-center mt-[10px] transition duration-300 ease-in-out hover:scale-110 cursor-pointer md:px-[7px] md:py-[20px] py-[15px] px-[10px] rounded-[4px]  mx-[10px]  md:justify-between bg-[#d4c088] md:w-[220px]">
         <div className="md:px-[1px] px-[3px] mr-[3px] ">
-          <Image src="/assets/shield.png" alt="" width={40} height={40} />
+          <Image
+            src="/assets/images/shield.png"
+            alt=""
+            width={40}
+            height={40}
+          />
         </div>
         <div>
           <p className="font-semibold">Secure Payment</p>
@@ -38,7 +48,12 @@ const Services = () => {
       </section>
       <section className="flex items-center mt-[10px] transition duration-300 ease-in-out hover:scale-110 cursor-pointer md:px-[7px] md:py-[20px] py-[15px] px-[10px] rounded-[4px]  mx-[10px]  md:justify-between bg-[#95d488] md:w-[220px]">
         <div className="md:px-[1px] px-[3px] mr-[3px] ">
-          <Image src="/assets/profit.png" alt="" width={40} height={40} />
+          <Image
+            src="/assets/images/profit.png"
+            alt=""
+            width={40}
+            height={40}
+          />
         </div>
         <div>
           <p className="font-semibold">Back Guarantee</p>

@@ -104,7 +104,7 @@ const Shop = () => {
         </div>
       </section>
       <section>
-        <div className="text-black">
+        <div className="text-black pb-4">
           {productsData.length === 0 ? (
             <h1 className="text-center text-lg py-[20px]">
               No Products are Found!

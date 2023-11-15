@@ -69,7 +69,12 @@ const Navbar = () => {
     <nav ref={navbarRef} className="bg-[#ffffff] p-2  w-full  ">
       <main className="md:flex flex justify-between md:justify-around md:items-center">
         <section className="flex  items-center">
-          <Image src="/assets/shooping.png" alt="" width={30} height={30} />
+          <Image
+            src="/assets/images/shooping.png"
+            alt="mall icon"
+            width={30}
+            height={30}
+          />
           <h3 className="font-bold">HalalMart</h3>
         </section>
         <section className="md:flex md:justify-around hidden  md:w-[200px]">
@@ -101,13 +106,19 @@ const Navbar = () => {
           </div>
 
           <div className="transition cursor-pointer duration-100 ease-in-out active:scale-110 relative ml-[6px] ">
-            <Image
-              src={currentUser ? currentUser.photoURL : "/assets/user-icon.png"}
-              alt=""
-              width={25}
-              height={25}
-              onClick={toggleProfileReffFunc}
-            />
+            {
+              <Image
+                src={
+                  currentUser?.photoURL
+                    ? currentUser?.photoURL
+                    : "/assets/images/user-icon.png"
+                }
+                alt="user image"
+                width={25}
+                height={25}
+                onClick={toggleProfileReffFunc}
+              />
+            }
             <div
               className={styles.profile_actions}
               ref={profileActionRef}

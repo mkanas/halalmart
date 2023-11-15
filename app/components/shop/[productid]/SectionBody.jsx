@@ -35,7 +35,7 @@ const SectionBody = ({
   }, []);
 
   return (
-    <div className="md:flex md:items-center flex justify-center items-center md:justify-center">
+    <div className="md:flex md:items-center  flex justify-center items-center md:justify-center">
       <div className="md:w-[80%] md:flex   md:justify-around">
         <section>
           <div className="mt-[30px]">
@@ -46,7 +46,7 @@ const SectionBody = ({
           <h1 className="md:text-[30px]  text-[20px] font-semibold text-black ">
             {productName}
           </h1>
-          <div className="flex items-center mt-[5px] justify-between w-[200px]">
+          <div className="flex items-center mt-[5px]  justify-between w-[200px]">
             <div className="flex">
               <AiFillStar style={{ color: "#f8aa36" }} />
               <AiFillStar style={{ color: "#f8aa36" }} />

@@ -69,7 +69,9 @@ const Signup = () => {
     <main className="bg-white  py-[50px] ">
       {loading ? (
         <div>
-          <h6 className="text-center h-full">Loading.....</h6>
+          <h6 className="text-center text-black text-2xl min-h-screen h-full">
+            Loading.....
+          </h6>
         </div>
       ) : (
         <section>
