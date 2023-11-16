@@ -33,34 +33,44 @@ const Signup = () => {
       const storageRef = ref(storage, `images/${Date.now() + username}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
-      uploadTask.on(
-        (error) => {
-          toast.error(error.message);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            console.log(downloadURL);
-            //update User profile
-            await updateProfile(user, {
-              displayName: username,
-              photoURL: downloadURL,
-            });
-            //store user data in firestore database
-            await setDoc(doc(db, "users", user.uid), {
-              uid: user.uid,
-              displayName: username,
-              email,
-              photoURL: downloadURL,
-            });
-          });
-        }
-      );
+      await new Promise((resolve, reject) => {
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {},
+          (error) => {
+            toast.error(error.message);
+            reject(error);
+          },
+          () => {
+            resolve();
+          }
+        );
+      });
+
+      // Dapatkan URL unduhan
+      const photoURL = await getDownloadURL(uploadTask.snapshot.ref);
+
+      // Update profil pengguna
+      await updateProfile(user, {
+        displayName: username,
+        photoURL,
+      });
+
+      // Simpan data pengguna di basis data firestore
+      await setDoc(doc(db, "users", user.uid), {
+        uid: user.uid,
+        displayName: username,
+        email,
+        photoURL,
+      });
 
       setLoading(false);
       toast.success("Success created account");
-      router.push("/components/login");
+      //router.push("/components/login");
+      window.location.href = "/";
     } catch (error) {
       setLoading(false);
+      console.info(error);
       toast.error("Something went wrong");
     }
   };
@@ -69,7 +79,7 @@ const Signup = () => {
     <main className="bg-white  py-[50px] ">
       {loading ? (
         <div>
-          <h6 className="text-center text-black text-2xl min-h-screen h-full">
+          <h6 className="text-center text-black text-2xl py-10 h-full">
             Loading.....
           </h6>
         </div>

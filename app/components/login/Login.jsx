@@ -37,7 +37,7 @@ const Login = () => {
     <main className="bg-white  py-[50px] ">
       {loading ? (
         <div>
-          <h1 className="text-center text-black text-2xl min-h-screen h-full">
+          <h1 className="text-center text-black text-2xl py-10 h-full">
             Loading...
           </h1>
         </div>
