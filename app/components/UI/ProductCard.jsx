@@ -27,9 +27,7 @@ const ProductCard = ({ items }) => {
   return (
     <section className="cursor-pointer items-center ">
       <div className="leading-4 ">
-        <Link
-          href={`${process.env.NEXT_PUBLIC_NEXT_URL}/components/shop/${items.id}`}
-        >
+        <Link href={`/components/shop/${items.id}`}>
           <div className="transition duration-300 ease-in-out hover:scale-85  ">
             <Image
               src={items.imgUrl}

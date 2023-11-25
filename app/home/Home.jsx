@@ -115,7 +115,7 @@ const Home = () => {
 
           <div className="mt-[20px] md:block hidden">
             <Image
-              src="/assets/images/counter-timer-img.png "
+              src="/assets/images/counter-timer-img.png"
               alt="counter"
               width={280}
               height={280}

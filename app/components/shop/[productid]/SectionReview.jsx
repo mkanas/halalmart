@@ -7,13 +7,11 @@ import { toast } from "react-toastify";
 const SectionReview = ({ reviews, description }) => {
   const [tab, setTab] = useState("desc");
   const [rating, setRating] = useState(null);
-  const reviewUser = useRef("");
-  const reviewMsg = useRef("");
+  const [submitReview, setSubmitReview] = useState("");
+  const [submitMsg, setSubmitMsg] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const submitReview = reviewUser.current.value;
-    const submitMsg = reviewMsg.current.value;
 
     const reviewObj = {
       username: submitReview,
@@ -21,7 +19,8 @@ const SectionReview = ({ reviews, description }) => {
       rating,
     };
     toast.success("Review Submitted");
-
+    setSubmitReview("");
+    setSubmitMsg("");
     console.log(reviewObj);
   };
 
@@ -69,7 +68,8 @@ const SectionReview = ({ reviews, description }) => {
               <div className="pt-[20px]">
                 <input
                   required
-                  ref={reviewUser}
+                  value={submitReview}
+                  onChange={(e) => setSubmitReview(e.target.value)}
                   type="text"
                   placeholder="Enter Your Name..."
                   className="md:w-full w-[350px] md:border border rounded border-[#7a7777] md:border-[#7a7777] md:rounded py-[5px] px-[15px]"
@@ -118,7 +118,8 @@ const SectionReview = ({ reviews, description }) => {
                 </span>
               </div>
               <textarea
-                ref={reviewMsg}
+                value={submitMsg}
+                onChange={(e) => setSubmitMsg(e.target.value)}
                 required
                 type="text"
                 row={4}
