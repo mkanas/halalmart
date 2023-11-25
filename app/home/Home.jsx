@@ -72,7 +72,12 @@ const Home = () => {
           </div>
         </article>
         <div className="md:px-[25px] md:py-[50px] px-[10px] md:w-1/2">
-          <Image src="/assets/hero-img.png" alt="" width={500} height={300} />
+          <Image
+            src="/assets/images/hero-img.png"
+            alt=""
+            width={500}
+            height={300}
+          />
         </div>
       </section>
       <Services />
