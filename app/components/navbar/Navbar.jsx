@@ -68,14 +68,16 @@ const Navbar = () => {
   return (
     <nav ref={navbarRef} className="bg-[#ffffff] p-2  w-full  ">
       <main className="md:flex flex justify-between md:justify-around md:items-center">
-        <section className="flex  items-center">
-          <Image
-            src="/assets/images/shooping.png"
-            alt="mall icon"
-            width={30}
-            height={30}
-          />
-          <h3 className="font-bold">HalalMart</h3>
+        <section>
+          <Link className="flex  items-center" href="/">
+            <Image
+              src="/assets/images/shooping.png"
+              alt="mall icon"
+              width={30}
+              height={30}
+            />
+            <h3 className="font-bold">HalalMart</h3>
+          </Link>
         </section>
         <section className="md:flex md:justify-around hidden  md:w-[200px]">
           {navMenu.map((item) => (
@@ -93,7 +95,7 @@ const Navbar = () => {
           <div className="  w-[35px] relative flex cursor-pointer justify-center items-center h-[30px]">
             <BiHeart size={22} />
             <span className="rounded-full  font-semibold items-center px-[5px] top-[5%] right-[4%] text-[9px]  absolute bg-black z-10  text-white ">
-              12
+              0
             </span>
           </div>
           <div className=" w-[35px] relative flex cursor-pointer justify-center items-center h-[30px]">
