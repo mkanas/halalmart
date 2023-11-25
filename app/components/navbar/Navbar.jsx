@@ -50,7 +50,7 @@ const Navbar = () => {
     signOut(auth)
       .then(() => {
         toast.success("Your account has been logged out");
-        router.push(process.env.NEXT_URL);
+        router.push("/components/shop/");
       })
       .catch((err) => {
         toast.error(err.message);
