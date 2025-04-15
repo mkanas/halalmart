@@ -64,7 +64,7 @@ const Home = () => {
             </p>
           </div>
           <div className="p-[7px] transition duration-300 ease-in-out hover:scale-110 mt-[20px]  rounded-[4px] items-center flex justify-center text-white w-[100px] md:w-[120px] bg-[#1d1431]">
-            <Link href="http://localhost:3000/components/shop">
+            <Link href="https://halalmart.vercel.app/components/shop">
               <button className="uppercase md:text-base text-sm">
                 Shop Now
               </button>
