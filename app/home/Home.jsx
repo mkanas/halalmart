@@ -103,7 +103,7 @@ const Home = () => {
             <Clock />
             <div className=" w-full md:flex md:justify-start justify-center flex jus ">
               <Link
-                href="http://localhost:3000/components/shop"
+                href="https://halalmart.vercel.app/components/shop"
                 className="py-[5px] px-[5px] transition md:text-left  text-center duration-300 ease-in-out hover:scale-110 mt-[20px]  rounded-[4px] items-center flex justify-center text-black w-[90px] bg-white"
               >
                 <button className="capitalyze text-center font-semibold text-sm">
