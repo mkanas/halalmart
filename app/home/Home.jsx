@@ -1,59 +1,59 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Services from "../components/Services";
-import ProductList from "../components/UI/ProductList";
-import products from "@/public/assets/data/products";
-import Clock from "../components/UI/Clock";
+import { useState, useEffect } from 'react'
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import Services from '../components/Services'
+import ProductList from '../components/UI/ProductList'
+import products from '@/public/assets/data/products'
+import Clock from '../components/UI/Clock'
 
 export const metadata = {
-  title: "HalalMart - Home",
-  description: "This page of Home",
-};
+  title: 'HalalMart - Home',
+  description: 'This page of Home',
+}
 
 const Home = () => {
-  const [dataTrending, setDataTrending] = useState([]);
-  const [dataBestSaler, setDataBestSaler] = useState([]);
-  const [dataMobile, setDataMobile] = useState([]);
-  const [dataWireless, setDataWireless] = useState([]);
-  const [dataWatch, setDataWatch] = useState([]);
+  const [dataTrending, setDataTrending] = useState([])
+  const [dataBestSaler, setDataBestSaler] = useState([])
+  const [dataMobile, setDataMobile] = useState([])
+  const [dataWireless, setDataWireless] = useState([])
+  const [dataWatch, setDataWatch] = useState([])
 
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear()
 
   useEffect(() => {
     const filteredTrendingProducts = products.filter(
-      (item) => item.category === "chair"
-    );
+      (item) => item.category === 'chair'
+    )
 
     const filteredBestSalerProducts = products.filter(
-      (item) => item.category === "sofa"
-    );
+      (item) => item.category === 'sofa'
+    )
     const filteredMobileProducts = products.filter(
-      (item) => item.category === "mobile"
-    );
+      (item) => item.category === 'mobile'
+    )
 
     const filteredWirelessProducts = products.filter(
-      (item) => item.category === "wireless"
-    );
+      (item) => item.category === 'wireless'
+    )
     const filteredWatchProducts = products.filter(
-      (item) => item.category === "watch"
-    );
+      (item) => item.category === 'watch'
+    )
 
-    setDataTrending(filteredTrendingProducts);
-    setDataBestSaler(filteredBestSalerProducts);
-    setDataMobile(filteredMobileProducts);
-    setDataWireless(filteredWirelessProducts);
-    setDataWatch(filteredWatchProducts);
-  }, []);
+    setDataTrending(filteredTrendingProducts)
+    setDataBestSaler(filteredBestSalerProducts)
+    setDataMobile(filteredMobileProducts)
+    setDataWireless(filteredWirelessProducts)
+    setDataWatch(filteredWatchProducts)
+  }, [])
 
   return (
-    <main className="bg-white">
-      <section className=" h-full w-full md:flex md:justify-between bg-[#c7e2e9]">
-        <article className="md:w-1/2 align-middle md:py-[100px] md:pl-[100px] pt-[50px] px-[20px] items-center">
-          <div>
+    <main className="bg-white flex items-center flex-col justify-center w-full h-full">
+      <section className=" md:flex max-w-[220%] max-h-full md:justify-between bg-[#c7e2e9]">
+        <article className="md:w-1/2  align-middle md:py-[100px] md:pl-[100px] pt-[50px] px-[20px] items-center">
+          <div className="">
             <p className="font-bold">Trending product in 2023</p>
             <p className="capitalize font-semibold leading-[40px] my-[10px] text-[30px] md:text-[34px]">
               make your interior more minimalistic & modern
@@ -71,7 +71,7 @@ const Home = () => {
             </Link>
           </div>
         </article>
-        <div className="md:px-[25px] md:py-[50px] px-[10px] md:w-1/2">
+        <div className="md:px-[25px] md:py-[50px] px-[10px] md:w-[40%]">
           <Image
             src="/assets/images/hero-img.png"
             alt=""
@@ -139,7 +139,7 @@ const Home = () => {
         <ProductList data={dataWatch} />
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

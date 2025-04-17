@@ -1,40 +1,40 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/firebase.config";
-import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
+import React, { useState } from 'react'
+import Link from 'next/link'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '@/firebase.config'
+import { toast } from 'react-toastify'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
 
   const signIn = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault()
+    setLoading(true)
     try {
       const userCredentials = await signInWithEmailAndPassword(
         auth,
         email,
         password
-      );
-      const user = userCredentials.user;
-      console.log(user);
-      setLoading(false);
-      toast.success("Successfully signed in");
-      router.push("/components/checkout");
+      )
+      const user = userCredentials.user
+      console.log(user)
+      setLoading(false)
+      toast.success('Successfully signed in')
+      router.push('/components/checkout')
     } catch (error) {
-      setLoading(false);
-      toast.error(error.message);
+      setLoading(false)
+      toast.error(error.message)
     }
-  };
+  }
 
   return (
-    <main className="bg-white  py-[50px] ">
+    <main className="bg-white py-[100px] min-h-[680px] ">
       {loading ? (
         <div>
           <h1 className="text-center text-black text-2xl py-10 h-full">
@@ -73,20 +73,20 @@ const Login = () => {
                 </button>
               </div>
               <h4 className="text-xs text-center text-white mt-6">
-                Dont have an Account ?{" "}
+                Dont have an Account ?{' '}
                 <Link
                   className="hover:text-red-600 cursor-pointer"
                   href="/components/signup"
                 >
                   Create an Account
-                </Link>{" "}
+                </Link>{' '}
               </h4>
             </form>
           </div>
         </section>
       )}
     </main>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

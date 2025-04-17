@@ -1,34 +1,34 @@
-"use client";
+'use client'
 
-import React from "react";
-import BgShop from "../UI/bgshop/BgShop";
-import Image from "next/image";
-import { AiTwotoneDelete } from "react-icons/ai";
-import { cartActions } from "@/app/redux/features/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
-import Link from "next/link";
+import React from 'react'
+import BgShop from '../UI/bgshop/BgShop'
+import Image from 'next/image'
+import { AiTwotoneDelete } from 'react-icons/ai'
+import { cartActions } from '@/app/redux/features/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import Link from 'next/link'
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const cartItems = useSelector((state) => state.cart.cartItems)
+  const totalAmount = useSelector((state) => state.cart.totalAmount)
   return (
-    <main className="text-black  w-full ">
+    <main className="text-black  w-full min-h-[690px]  ">
       <BgShop title="Shopping Cart" />
-      <div className="md:flex md:justify-around ">
+      <div className="md:flex justify-around items-center flex-col">
         <section className="md:flex md:justify-center mt-8 text-black items-center">
           {cartItems.length === 0 ? (
-            <h2 className=" flex justify-center text-center">
+            <h2 className=" flex justify-center py-10 text-center">
               No Item added to the cart
             </h2>
           ) : (
-            <table className="table  border md:w-[800px] ">
+            <table className="table-auto  border md:w-[800px] ">
               <thead>
-                <tr>
+                <tr className="bg-[#110c4b] text-white">
                   <th>Image</th>
                   <th>Title</th>
-                  <th>Price</th>
-                  <th>Qty</th>
-                  <th>Delete</th>
+                  <th className="px-1">Price</th>
+                  <th className="px-1">Qty</th>
+                  <th className="px-1">Delete</th>
                 </tr>
               </thead>
               <tbody className="text-black">
@@ -44,10 +44,10 @@ const Cart = () => {
             <h6 className="font-semibold">Subtotal :</h6>
             <span className="font-semibold">${totalAmount}</span>
             <p className="my-[5px] text-xs ">
-              Taxes and shipping will calculate in checkout{" "}
+              Taxes and shipping will calculate in checkout{' '}
             </p>
           </div>
-          <div className=" md:mb-[20px] flex justify-center mt-[10px] ">
+          <div className=" md:mb-[10px] flex justify-center mt-[10px] ">
             <div>
               <button className="p-[7px] transition cursor-pointer duration-100 ease-in-out active:scale-110   rounded-[4px]  items-center flex justify-center text-white w-[300px] md:w-[270px] bg-[#1d1431]">
                 <Link href="/components/shop">Continue Shopping</Link>
@@ -60,34 +60,28 @@ const Cart = () => {
         </section>
       </div>
     </main>
-  );
-};
+  )
+}
 
 const Tr = ({ item }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const deleteProduct = () => {
-    dispatch(cartActions.deleteItem(item.id));
-  };
+    dispatch(cartActions.deleteItem(item.id))
+  }
   return (
     <tr>
-      <td>
-        <Image
-          className="ml-[35px]"
-          src={item.imgUrl}
-          width={100}
-          height={80}
-          alt=""
-        />
+      <td className="flex items-center justify-center">
+        <Image src={item.imgUrl} width={100} height={80} alt="" />
       </td>
       <td className="text-center">{item.productName}</td>
       <td className="text-center">${item.price}</td>
-      <td className="text-center">{item.quantity} pck</td>
-      <td className="" onClick={() => deleteProduct()}>
-        <AiTwotoneDelete className="cursor-pointer ml-[35px]" />
+      <td className="text-center">{item.quantity}</td>
+      <td className="text-center" onClick={() => deleteProduct()}>
+        <AiTwotoneDelete className="cursor-pointer w-full " />
       </td>
     </tr>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart
