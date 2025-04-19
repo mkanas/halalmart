@@ -51,33 +51,35 @@ const Home = () => {
 
   return (
     <main className="bg-white flex items-center flex-col justify-center w-full h-full">
-      <section className=" md:flex max-w-[220%] max-h-full md:justify-between bg-[#c7e2e9]">
-        <article className="md:w-1/2  align-middle md:py-[100px] md:pl-[100px] pt-[50px] px-[20px] items-center">
-          <div className="">
-            <p className="font-bold">Trending product in 2023</p>
-            <p className="capitalize font-semibold leading-[40px] my-[10px] text-[30px] md:text-[34px]">
-              make your interior more minimalistic & modern
-            </p>
-            <p className="my-[10px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-              veniam molestiae voluptate enim perspiciatis impedit.
-            </p>
+      <section className=" w-full max-h-full flex items-center justify-center  bg-[#c7e2e9]">
+        <div className="md:w-[90%] md:flex md:justify-around  ">
+          <article className="md:w-[50%] align-middle md:py-[100px] md:pl-[200px] pt-[50px] px-[20px] items-center">
+            <div>
+              <p className="font-bold">Trending product in 2023</p>
+              <p className="capitalize font-semibold leading-[40px] my-[10px] text-[30px] md:text-[34px]">
+                make your interior more minimalistic & modern
+              </p>
+              <p className="my-[10px]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+                veniam molestiae voluptate enim perspiciatis impedit.
+              </p>
+            </div>
+            <div className="p-[7px] transition duration-300 ease-in-out hover:scale-110 mt-[20px]  rounded-[4px] items-center flex justify-center text-white w-[100px] md:w-[120px] bg-[#1d1431]">
+              <Link href="https://halalmart.vercel.app/components/shop">
+                <button className="uppercase md:text-base text-sm">
+                  Shop Now
+                </button>
+              </Link>
+            </div>
+          </article>
+          <div className="md:px-[25px] md:py-[50px] flex justify-center items-center px-[10px]  md:w-[50%]">
+            <Image
+              src="/assets/images/hero-img.png"
+              alt=""
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="p-[7px] transition duration-300 ease-in-out hover:scale-110 mt-[20px]  rounded-[4px] items-center flex justify-center text-white w-[100px] md:w-[120px] bg-[#1d1431]">
-            <Link href="https://halalmart.vercel.app/components/shop">
-              <button className="uppercase md:text-base text-sm">
-                Shop Now
-              </button>
-            </Link>
-          </div>
-        </article>
-        <div className="md:px-[25px] md:py-[50px] px-[10px] md:w-[40%]">
-          <Image
-            src="/assets/images/hero-img.png"
-            alt=""
-            width={500}
-            height={300}
-          />
         </div>
       </section>
       <Services />
